@@ -59,7 +59,7 @@ Siehe Ressourcenordner (resources)
 #TODO
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 |Befolgen Sie die Anweisungen, um die Einstellungen anzupassen                       | Suchen Sie nach Abschluss der Voreinstellung die generierte Datei team.yml, um die Teaminformationen zu ändern, und führen Sie **/bd tsl aus, um die Teamdaten neu zu laden** |
-| | Dann /bd set ausführen, um die Anzahl der Spawnpunkte des Items voreinzustellen, und dann /bd ausführen, um die Konfiguration des Raums zu starten **Hinweis: Bitte keine Fehler beim Setzen machen, sonst könnt ihr das Flag nur mit /bd zurücksetzen stornieren. Die Reihenfolge des Store-Geburtspunkts des Teams ist die Reihenfolge der team.yml-Konfigurationsdatei, bitte entsprechend der Reihenfolge einstellen. **|
+| | Dann /bd set ausführen, um die Anzahl der Spawnpunkte des Items voreinzustellen, und dann /bd ausführen, um die Konfiguration des Raums zu starten **Hinweis: Bitte keine Fehler beim Setzen machen, sonst könnt ihr das Flag nur mit /bd cancel stornieren. Die Reihenfolge des Store-Geburtspunkts des Teams ist die Reihenfolge der team.yml-Konfigurationsdatei, bitte entsprechend der Reihenfolge einstellen. **|
 
 
 
