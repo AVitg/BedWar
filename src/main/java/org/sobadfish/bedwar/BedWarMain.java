@@ -54,6 +54,8 @@ public class BedWarMain extends PluginBase {
     public static UiType uiType;
 
     public static int upExp;
+    public static ResourceBundle messages = ResourceBundle.getBundle("i18n/ConsoleBundle", new Locale("en"));
+    
 
     @Override
     public void onEnable() {
@@ -61,8 +63,7 @@ public class BedWarMain extends PluginBase {
         //  TODO initialization file
 
         checkServer();
-	//Locale locale = new Locale("en");
-	ResourceBundle messages = ResourceBundle.getBundle("i18n/ConsoleBundle", new Locale("en"));
+	
         this.getLogger().info(TextFormat.colorize('&',"&b" + messages.getString("greeting")));
         this.getLogger().info(TextFormat.colorize('&',"&b   ____           ___          __"));
         this.getLogger().info(TextFormat.colorize('&',"&b  |  _ \\         | \\ \\        / /"));
@@ -71,7 +72,7 @@ public class BedWarMain extends PluginBase {
         this.getLogger().info(TextFormat.colorize('&',"&b  | |_) |  __/ (_| |  \\  /\\  / (_| | |"));
         this.getLogger().info(TextFormat.colorize('&',"&b  |____/ \\___|\\__,_|   \\/  \\/ \\__,_|_|"));
         this.getLogger().info(TextFormat.colorize('&',"&b"));
-        this.getLogger().info(TextFormat.colorize('&',"&eLoading Plugin BedWar - Version&av"+this.getDescription().getVersion()));
+        this.getLogger().info(TextFormat.colorize('&',"&eLoading Plugin BedWar - Version &av"+this.getDescription().getVersion()));
         this.getLogger().info(TextFormat.colorize('&',"&cPlugin created by:&b sobadfish(某吃瓜咸鱼) &aQQ：&e1586235767"));
         this.getLogger().info(TextFormat.colorize('&',"&cThis plug-in is an original plug-in, and the source of some source codes has been marked with the original author"));
         this.getLogger().info(TextFormat.colorize('&',"&cTranslated by "));
