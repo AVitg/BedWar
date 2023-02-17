@@ -70,9 +70,10 @@ public class BedWarMain extends PluginBase {
         this.getLogger().info(TextFormat.colorize('&',"&b  | |_) |  __/ (_| |  \\  /\\  / (_| | |"));
         this.getLogger().info(TextFormat.colorize('&',"&b  |____/ \\___|\\__,_|   \\/  \\/ \\__,_|_|"));
         this.getLogger().info(TextFormat.colorize('&',"&b"));
-        this.getLogger().info(TextFormat.colorize('&',"&e" + messages.getString("loading") + "&av"+this.getDescription().getVersion()));
-        this.getLogger().info(TextFormat.colorize('&',"&c" + messages.getString("author") + "&aQQ：&e1586235767"));
+        this.getLogger().info(TextFormat.colorize('&',"&e" + messages.getString("loading") + " &av"+this.getDescription().getVersion()));
+        this.getLogger().info(TextFormat.colorize('&',"&c" + messages.getString("author") + " &aQQ：&e1586235767"));
         this.getLogger().info(TextFormat.colorize('&',"&c" + messages.getString("copyright")));
+		this.getLogger().info(TextFormat.colorize('&',"&c translated by K-egg"));
         sendMessageToConsole("&a"+ messages.getString("depCheck"));
         for(String s : this.getDescription().getSoftDepend()){
             Plugin plugin = getServer().getPluginManager().getPlugin(s);
