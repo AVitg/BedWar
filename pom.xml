@@ -75,9 +75,9 @@
         <finalName>${project.artifactId}_v${project.version}</finalName>
 		<resources>
            <resource>
-              <directory>resources</directory>
+              <directory>srcr/main/resources</directory>
               <includes>
-                <include>**</include>
+                <include>i18n/**</include>
               </includes>
            </resource>
         </resources>
