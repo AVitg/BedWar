@@ -7,61 +7,59 @@
 
 
 # <div align="center"><font size=12 color='BlueViolet'>B</font><font size = 6 color="DeepSkyBlue">e</font><font size=12 color='Red'>d</font><font size=12 color='Yellow'>W</font><font size = 6 color="Chartreuse">a</font><font size=12 color='Green'>r</font>     <font size=12 color='BlueViolet'>起</font><font size = 6 color="DeepSkyBlue">床</font><font size=12 color='Red'>战</font><font size=6 color='Yellow'>争</font> </div>
+**Anmerkung:**
+Übersetzt mit google translate
 
-**简介:**
-在游戏中玩家们将会以团队PVP的形式展开一场绝对不同的较量。玩家们的目的就是在游戏中来保护自己的床不被摧毁，所以要齐心协力，在游戏中依靠队友互相合作来摧毁对手的床位就算做是游戏中的胜利！
+**Einführung:**
+Im Spiel starten die Spieler einen völlig anderen Wettbewerb in Form von Team-PVP. Der Zweck des Spiels ist es, dass die Spieler ihre eigenen Betten vor der Zerstörung im Spiel schützen. Also müssen sie zusammenarbeiten und sich darauf verlassen, dass Teamkollegen zusammenarbeiten, um die Betten des Gegners im Spiel zu zerstören, was als Sieg im Spiel angesehen wird!
 
-游戏特色：  
-1.玩家们将会和16名玩家们一起分成四个队伍来展开互相对决，目的就是保护自己的床位；   
-2.只要床铺存在，团队中的玩家就可以恢复活力，让自己的队友们能够瞬间恢复成为最佳状态重新投入战斗；   
-3.建立与敌人岛屿的桥梁，入侵敌人的领地，以摧毁对手的床位为最终的目的赢得胜利 
+Spielfunktionen:
+1. Die Spieler werden in vier Teams mit 16 Spielern aufgeteilt, um gegeneinander zu kämpfen, der Zweck ist, ihre eigenen Betten zu schützen;
+2. Solange das Bett existiert, können sich die Spieler im Team wiederbeleben, sodass sich ihre Teamkollegen sofort in ihrer besten Verfassung erholen und wieder in den Kampf einsteigen können;
+3. Bauen Sie eine Brücke zur feindlichen Insel, dringen Sie in das feindliche Territorium ein und gewinnen Sie den Sieg mit dem ultimativen Ziel, das Bett des Gegners zu zerstören
 
 ------
 
-游戏模式:  
- 1. **经验模式**  
- 2. **物品兑换模式**  
+Spielmodus:
+  1. **Erfahrungsmodus**
+  2. **Gegenstandsaustauschmodus**
+  
+**Einführung in die Verwendung:**
+**1. Plug-in-Start**
 
-**使用介绍:**  
-**一、插件启动**
+1. Kopieren Sie dieses Plugin in den Plugins-Ordner
+2. Starten Sie den Server, und warten bis das Plugin geladen ist
 
-1. 将本插件拖动到 plugins文件夹
-2. 启动服务器直到插件加载完成
-
-
-3. 进入游戏后输入，来到游戏地图，执行/bd 即可开始创建房间。
-
+3. Nachdem Sie das Spiel betreten haben, führen Sie /bd aus, um mit der Erstellung eines Raums zu beginnen.
 
 
-**二、指令介绍**
+**2. Anweisungseinführung**
 
-| 指令                | 介绍                             |
+| Anweisung                | Erläuterung                             |
 | ------------------- | -------------------------------- |
-| /bd reload          | 重新读取配置文件                 |
-| /bd set [名称]      | 创建一个自定义房间模板           |
-| /bd tsl             | 读取模板的队伍数据与商店物品数据 |
-| /bd see             | 查看加载的房间                   |
-| /bd close [名称]    | 关闭房间                         |
-| /bd end             | 停止模板预设                     |
-| /bw                 | 进入游戏GUI                      |
-| /bw join [名称]     | 加入游戏房间                     |
-| /bw quit            | 离开游戏房间                     |
-| /bws [你要说的内容] | 发送游戏房间内全体消息           |
+| /bd reload          | Konfigurationsdatei erneut lesen                 |
+| /bd set [Name]      | Erstellen Sie eine benutzerdefinierte Raumvorlage, und folgen sie den weiteren Anweisungen /bd set [...]  |
+| /bd tsl             | Lesen Sie Vorlagenteamdaten und speichern Sie Artikeldaten |
+| /bd see             | Räume anzeigen                   |
+| /bd close [Name]    | schließe den Raum                         |
+| /bd end             | Erstellen der benutzerdefinierte Raumvorlage stoppen/beenden                     |
+| /bw                 | das Spiel betreten / GUI                      |
+| /bw join [Name]     | Spieleraum beitreten                     |
+| /bw quit            | Spiel(zimmer) verlassen                     |
+| /bws [Nachricht] | Senden Sie eine Nachricht an alle im Spiel(zimmer)          |
 
-**三、配置文件**
-
-参考resources文件夹
-
+**3. Konfigurationsdatei**
+Siehe Ressourcenordner (resources)
 ------
 
-**四、如何配置**
+**4. Konfiguration**
 
-1. 执行/bd set 房间名称 开始预设模板 (请注意不要出错，不然只能执行/bd cancel重置了)
+1. Führen Sie /bd set [room name] aus, um die voreingestellte Vorlage zu starten (bitte achten Sie darauf, keine Fehler zu machen, da Sie sonst nur /bd cancel zum Zurücksetzen ausführen können)
 
-| [![5.png](https://www.minebbs.com/data/attachments/32/32005-3ba26426d7dc34266a73953656cff814.jpg)](https://www.minebbs.com/attachments/5-png.29169/) | [![9.png](https://www.minebbs.com/data/attachments/32/32007-a0895f517fbf83b61359202a44057129.jpg)](https://www.minebbs.com/attachments/9-png.29171/) |
+#TODO
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 根据提示去自定义设置内容                                     | 预设完成后找到生成的team.yml文件修改团队信息并执行 **/bd tsl 重载团队数据** |
-| [![6.png](https://www.minebbs.com/data/attachments/32/32006-cca5d927f2df02ffda45dab9c75d8740.jpg)](https://www.minebbs.com/attachments/6-png.29170/) | 之后执行/bd set 预设好物品的生成点数量，之后执行/bd即可开始房间的配置  **注意: 在设置的时候请不要出错，不然只能/bd cancel重置标志位。队伍的商店出生点顺序为team.yml 配置文件的顺序，请根据顺序进行设置操作。** |
+|Befolgen Sie die Anweisungen, um die Einstellungen anzupassen                       | Suchen Sie nach Abschluss der Voreinstellung die generierte Datei team.yml, um die Teaminformationen zu ändern, und führen Sie **/bd tsl aus, um die Teamdaten neu zu laden** |
+| | Dann /bd set ausführen, um die Anzahl der Spawnpunkte des Items voreinzustellen, und dann /bd ausführen, um die Konfiguration des Raums zu starten **Hinweis: Bitte keine Fehler beim Setzen machen, sonst könnt ihr das Flag nur mit /bd zurücksetzen stornieren. Die Reihenfolge des Store-Geburtspunkts des Teams ist die Reihenfolge der team.yml-Konfigurationsdatei, bitte entsprechend der Reihenfolge einstellen. **|
 
 
 
@@ -69,68 +67,63 @@
 
 ------
 
-**五、更新日志:**
+**5. ChangeLog :**
 
-**2022/5/15 v1.3.3 更新**  
-\+ 自动破坏床时间限制  
-\+ 修复玩家退出游戏后再次进入游戏房间出现的BUG  
-\+ 修改/bws 聊天为房间内全体消息 正常打字为队伍聊天  
+**Aktualisierung 1.3.3 vom 15.05.2022**
+\+ Zeitlimit für die automatische Unterbrechung des Schlafens
+\+ Beheben Sie den BUG, ​​der auftritt, wenn der Spieler den Spielraum nach dem Verlassen des Spiels wieder betritt
+\+ Ändere den /bws-Chat auf alle Nachrichten im Raum, normale Eingabe auf Team-Chat
 
-**2022/5/20 v1.3.4 更新**
-\+ 修改默认破坏床时间为120秒  
-\+ 增加经验起床功能 (将商店的 money 中 铜锭 金锭这种的改为 exp 即可)  
-\+ 增加经验起床的配置 在 room.yml 文件中 最下面加上 案例  
-(default 为默认 exp 为经验起床)  
-案例:  
-roomMoney: "exp"  
-\+ 增加exp 货币  
-\+ 可将 item.yml 文件内的货币加上 exp 即可等值为经验  
-案例:  
-money:  
-\# 货币名称  
-\- name: "铜锭"  
-\# 仅用作显示名称  
-customName: "&4铜锭"  
-item: "336:0"  
-exp: 1  
+**Aktualisierung v1.3.4 vom 20.05.2022**
+\+ Ändern Sie die standardmäßige Bettzerstörungszeit auf 120 Sekunden
+\+ Erhöhen Sie die Erfahrungs-Weckfunktion (ändern Sie die Kupferbarren und Goldbarren im Geld des Ladens in Erfahrung)
+\+ Fügen Sie die Konfiguration des Aufsteherlebnisses hinzu. Fügen Sie den Fall am Ende der Datei room.yml hinzu
+(Standard ist die Standard-Exp, um für Erfahrung aufzustehen)
+Fall:
+roomMoney: "exp"
+\+ Exp-Währung erhöhen
+\+ Sie können exp zur Währung in der item.yml-Datei hinzufügen, um Erfahrung zu entsprechen
+Fall:
+Geld:
+\# Währungsname
+\- name: "Kupferbarren"
+\# wird nur als Anzeigename verwendet
+customName: "&4Kupferbarren"
+Eintrag: "336:0"
+exp: 1
 
-**2022/5/20 v1.3.5 更新**  
-\+ 增加随机加入房间指令 /bd rjoin  
-\+ 修改创建房间的队伍提示  
-\+ 增加强制终止。 /bw cancel  
+**Aktualisierung v1.3.5 vom 20.05.2022**
+\+ füge zufälligen Befehl zum Beitreten eines Raums hinzu /bd rjoin
+\+ Ändern Sie die Team-Eingabeaufforderung zum Erstellen eines Raums
+\+ Fügt eine erzwungene Beendigung hinzu. /bw abbrechen
 
-**2022/5/20 v1.3.6 更新**  
-\+ 将经验起床获取到的经验以等级的形式展示  
+**Aktualisierung v1.3.6 vom 20.05.2022**
+\+ Zeigen Sie die Erfahrung, die Sie beim Aufstehen gesammelt haben, in Form von Levels an
 
 
-**2022/5/20 v1.3.7 更新**  
-\+ 修复创建房间出现的异常BUG  
-\+ 修复执行随机指令出现的BUG  
-\+ 修复经验起床物品不扣除BUG  
-\+ 修复创建房间文本错误的BUG  
-\+ 修复经验起床商店物品价格不是经验的BUG  
+**Aktualisierung v1.3.7 vom 20.05.2022**
+\+ Repariere den anormalen BUG beim Erstellen eines Raums
+\+ Behebt den BUG, ​​der auftritt, wenn zufällige Befehle ausgeführt werden
+\+ Repariere den BUG, ​​dass die Items zum Aufwecken der Erfahrung nicht abgezogen werden
+\+ Beheben Sie den Fehler beim Erstellen des Raumtextfehlers
+\+ Es wurde der Fehler behoben, dass der Preis des Erlebnis-Wake-up-Shop-Artikels nicht das Erlebnis ist
 
-**2022/5/22 v1.3.8 更新**  
-\+ 增加了凋零弓物品  
-示例: 在item.yml 中增加  
-"凋零弓":  
-customName: "&e凋零弓"  
-lore: []  
-item: "261:0"  
+**Aktualisierung v1.3.8 vom 22.05.2022**
+\+ Verdorrbogen-Gegenstand hinzugefügt
+Beispiel: Fügen Sie item.yml hinzu
+"Verdorrener Bogen":
+customName: "&eWither Bow"
+Überlieferung: []
+Eintrag: "261:0"
 
-\+ 增加游戏开始时的提示内容(可自定义)  
-\+ 增加游戏结束打印胜利团队数据  
-\+ 优化计分板显示与其他内容的显示  
+\+ Erhöhen Sie den Eingabeaufforderungsinhalt, wenn das Spiel beginnt (anpassbar)
+\+ Druck der Daten des Siegerteams am Ende des Spiels hinzugefügt
+\+ Optimieren Sie die Anzeige von Anzeigetafeln und anderen Inhalten
 
 
 
 ------
 
-**六、游戏内效果:**
+**6. Effekte im Spiel:**
 
-| [![1652553447392.png](https://www.minebbs.com/data/attachments/31/31962-c856252311c8ff30b36d9ea38fbb513b.jpg)](https://www.minebbs.com/attachments/1652553447392-png.29126/) | [![1652553559144.png](https://www.minebbs.com/data/attachments/31/31963-01ca004ab0bbd3f5ff9ef34432f9ae50.jpg)](https://www.minebbs.com/attachments/1652553559144-png.29127/) |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [![587ea38e8e7bde6f.jpg](https://www.minebbs.com/data/attachments/31/31974-e6cf8d40ce3b206741a122235bc14883.jpg)](https://www.minebbs.com/attachments/587ea38e8e7bde6f-jpg.29138/) | [![-63bcdca7003b3114.jpg](https://www.minebbs.com/data/attachments/31/31973-27f41890f450874d89c221ce8056a8a4.jpg)](https://www.minebbs.com/attachments/63bcdca7003b3114-jpg.29137/) |
-
-
-
+defekte bilder entfernt
