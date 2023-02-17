@@ -27,6 +27,8 @@ import org.sobadfish.bedwar.variable.TipVariable;
 import java.io.File;
 import java.util.LinkedHashMap;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  *   ____           ___          __
@@ -59,6 +61,9 @@ public class BedWarMain extends PluginBase {
         //  TODO initialization file
 
         checkServer();
+	//Locale locale = new Locale("en");
+	ResourceBundle messages = ResourceBundle.getBundle("i18n/ConsoleBundle", new Locale("en"));
+        this.getLogger().info(TextFormat.colorize('&',"&b" + messages.getString("greeting")));
         this.getLogger().info(TextFormat.colorize('&',"&b   ____           ___          __"));
         this.getLogger().info(TextFormat.colorize('&',"&b  |  _ \\         | \\ \\        / /"));
         this.getLogger().info(TextFormat.colorize('&',"&b  | |_) | ___  __| |\\ \\  /\\  / /_ _ _ __"));
