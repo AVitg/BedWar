@@ -98,7 +98,7 @@ public class BedWarMain extends PluginBase {
         Entity.registerEntity(EntityBlueWitherSkull.class.getSimpleName(), EntityBlueWitherSkull.class);
         Entity.registerEntity(IronGolem.class.getSimpleName(), IronGolem.class);
         loadBedWarConfig();
-        //TODO 注册指令
+        //TODO registration order
         this.getServer().getCommandMap().register("badwar",new BedWarAdminCommand("bd"));
         this.getServer().getCommandMap().register("badwar",new BedWarCommand("bw"));
         this.getServer().getCommandMap().register("badwar",new BedWarSpeakCommand("bws"));
@@ -113,7 +113,7 @@ public class BedWarMain extends PluginBase {
         RoomEventManager.register("light",LightEvent.class);
         RoomEventManager.register("die", DiwBowEvent.class);
 
-        sendMessageToConsole("&Currently built-in &a"+RoomEventManager.EVENT.size()+" &eevents");
+        sendMessageToConsole("&cCurrently built-in &a"+RoomEventManager.EVENT.size()+" &eevents");
 
 
 
