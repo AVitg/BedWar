@@ -57,14 +57,12 @@ public class BedWarMain extends PluginBase {
     public static ResourceBundle messages = ResourceBundle.getBundle("i18n/ConsoleBundle", new Locale("en"));
     
 
-    @Override
+@Override
     public void onEnable() {
         bedWarMain = this;
-        //  TODO initialization file
+        //  TODO 初始化文件
 
         checkServer();
-	
-        this.getLogger().info(TextFormat.colorize('&',"&b" + messages.getString("greeting")));
         this.getLogger().info(TextFormat.colorize('&',"&b   ____           ___          __"));
         this.getLogger().info(TextFormat.colorize('&',"&b  |  _ \\         | \\ \\        / /"));
         this.getLogger().info(TextFormat.colorize('&',"&b  | |_) | ___  __| |\\ \\  /\\  / /_ _ _ __"));
@@ -72,15 +70,14 @@ public class BedWarMain extends PluginBase {
         this.getLogger().info(TextFormat.colorize('&',"&b  | |_) |  __/ (_| |  \\  /\\  / (_| | |"));
         this.getLogger().info(TextFormat.colorize('&',"&b  |____/ \\___|\\__,_|   \\/  \\/ \\__,_|_|"));
         this.getLogger().info(TextFormat.colorize('&',"&b"));
-        this.getLogger().info(TextFormat.colorize('&',"&eLoading Plugin BedWar - Version &av"+this.getDescription().getVersion()));
-        this.getLogger().info(TextFormat.colorize('&',"&cPlugin created by:&b sobadfish(某吃瓜咸鱼) &aQQ：&e1586235767"));
-        this.getLogger().info(TextFormat.colorize('&',"&cThis plug-in is an original plug-in, and the source of some source codes has been marked with the original author"));
-        this.getLogger().info(TextFormat.colorize('&',"&cTranslated by "));
-        sendMessageToConsole("&aChecking for corresponding dependencies");
+        this.getLogger().info(TextFormat.colorize('&',"&e" + messages.getString("loading") + "&av"+this.getDescription().getVersion()));
+        this.getLogger().info(TextFormat.colorize('&',"&c" + messages.getString("author") + "&aQQ：&e1586235767"));
+        this.getLogger().info(TextFormat.colorize('&',"&c" + messages.getString("copyright")));
+        sendMessageToConsole("&a"+ messages.getString("depCheck"));
         for(String s : this.getDescription().getSoftDepend()){
             Plugin plugin = getServer().getPluginManager().getPlugin(s);
             if(plugin == null){
-                sendMessageToConsole("&c"+s+"The plugin is not loaded, some functions may not be available");
+                sendMessageToConsole("&c"+s+ messages.getString("pluginnotfound"));
                 continue;
             }
             try{
@@ -104,10 +101,10 @@ public class BedWarMain extends PluginBase {
         Entity.registerEntity(EntityBlueWitherSkull.class.getSimpleName(), EntityBlueWitherSkull.class);
         Entity.registerEntity(IronGolem.class.getSimpleName(), IronGolem.class);
         loadBedWarConfig();
-        //TODO registration order
-        this.getServer().getCommandMap().register("badwar",new BedWarAdminCommand("bd"));
-        this.getServer().getCommandMap().register("badwar",new BedWarCommand("bw"));
-        this.getServer().getCommandMap().register("badwar",new BedWarSpeakCommand("bws"));
+        //TODO 注册指令
+        this.getServer().getCommandMap().register("bedwar",new BedWarAdminCommand("bd"));
+        this.getServer().getCommandMap().register("bedwar",new BedWarCommand("bw"));
+        this.getServer().getCommandMap().register("bedwar",new BedWarSpeakCommand("bws"));
 
 
         RoomEventManager.register("time", TimeEvent.class);
@@ -119,17 +116,15 @@ public class BedWarMain extends PluginBase {
         RoomEventManager.register("light",LightEvent.class);
         RoomEventManager.register("die", DiwBowEvent.class);
 
-        sendMessageToConsole("&cCurrently built-in &a"+RoomEventManager.EVENT.size()+" &eevents");
-
-
+        sendMessageToConsole("&e"+ messages.getString("currentlyBuiltIn") +" &a"+RoomEventManager.EVENT.size()+" &e" + messages.getString("events"));
 
         ThreadManager.init();
-        this.getLogger().info(TextFormat.colorize('&',"&aThe Bed Wars plug-in is successfully loaded, Enjoy!"));
+        this.getLogger().info(TextFormat.colorize('&',"&a" + messages.getString("successLoaded")));
 
     }
 
     /**
-     * load configuration file
+     * 加载配置文件
     */
     public void loadBedWarConfig(){
         saveDefaultConfig();
@@ -141,12 +136,12 @@ public class BedWarMain extends PluginBase {
         File mainFileDir = new File(this.getDataFolder()+File.separator+"rooms");
         if(!mainFileDir.exists()){
             if(!mainFileDir.mkdirs()){
-                sendMessageToConsole("&cFailed to create folder rooms");
+                sendMessageToConsole("&c"+ messages.getString("folderroomscreationfailed"));
             }
         }
 
         roomManager = RoomManager.initGameRoomConfig(mainFileDir);
-        sendMessageToConsole("&aAll room data is loaded");
+        sendMessageToConsole("&a" + messages.getString("roomsloaded"));
         this.getServer().getPluginManager().registerEvents(roomManager,this);
         if(getConfig().getAll().size() == 0) {
             this.saveResource("config.yml", true);
@@ -156,7 +151,7 @@ public class BedWarMain extends PluginBase {
 
 
 
-        //Initialize leaderboard
+        //初始化排行榜
         topManager = PlayerTopManager.asFile(new File(this.getDataFolder()+File.separator+"top.json"));
         if(topManager != null){
             topManager.init();
@@ -194,7 +189,7 @@ public class BedWarMain extends PluginBase {
     }
 
     public static String getScoreBoardTitle(){
-        return TextFormat.colorize('&',bedWarMain.getConfig().getString("scoreboard-title","&f[&aBed Wars&f]"));
+        return TextFormat.colorize('&',bedWarMain.getConfig().getString("scoreboard-title","&f[&a"+messages.getString("bedwars") +"&f]"));
     }
 
     public static void sendTipMessageToObject(String msg,Object o){
@@ -275,7 +270,7 @@ public class BedWarMain extends PluginBase {
 
     private void checkServer(){
         boolean ver = false;
-        //Dual core compatible
+        //双核心兼容
         try {
             Class<?> c = Class.forName("cn.nukkit.Nukkit");
             c.getField("NUKKIT_PM1E");
@@ -291,19 +286,19 @@ public class BedWarMain extends PluginBase {
 
         AbstractFakeInventory.IS_PM1E = ver;
         if(ver){
-            sendMessageToConsole("&eRunning on Nukkit PM1E");
+            sendMessageToConsole("&e" + messages.getString("core") +" Nukkit PM1E");
         }else{
-            sendMessageToConsole("&eRunning on Nukkit");
+            sendMessageToConsole("&e" + messages.getString("core") +" Nukkit");
         }
     }
 
     public enum UiType{
         /**
-         * auto: automatic
+         * auto: 自动
          *
-         * packet: Graphical User Interface (GUI)
+         * packet: GUI界面
          *
-         * ui: chest interface
+         * ui: 箱子界面
          * */
         AUTO,PACKET,UI
     }
