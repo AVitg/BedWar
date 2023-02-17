@@ -56,7 +56,7 @@ public class BedWarMain extends PluginBase {
     @Override
     public void onEnable() {
         bedWarMain = this;
-        //  TODO 初始化文件
+        //  TODO initialization file
 
         checkServer();
         this.getLogger().info(TextFormat.colorize('&',"&b   ____           ___          __"));
@@ -66,14 +66,15 @@ public class BedWarMain extends PluginBase {
         this.getLogger().info(TextFormat.colorize('&',"&b  | |_) |  __/ (_| |  \\  /\\  / (_| | |"));
         this.getLogger().info(TextFormat.colorize('&',"&b  |____/ \\___|\\__,_|   \\/  \\/ \\__,_|_|"));
         this.getLogger().info(TextFormat.colorize('&',"&b"));
-        this.getLogger().info(TextFormat.colorize('&',"&e正在加载BedWar 起床战争插件 本版本为&av"+this.getDescription().getVersion()));
-        this.getLogger().info(TextFormat.colorize('&',"&c插件作者:&b sobadfish(某吃瓜咸鱼) &aQQ：&e1586235767"));
-        this.getLogger().info(TextFormat.colorize('&',"&c本插件为原创插件 部分源代码出处已标明原作者"));
-        sendMessageToConsole("&a正在检查相应的依赖");
+        this.getLogger().info(TextFormat.colorize('&',"&eLoading Plugin BedWar - Version&av"+this.getDescription().getVersion()));
+        this.getLogger().info(TextFormat.colorize('&',"&cPlugin created by:&b sobadfish(某吃瓜咸鱼) &aQQ：&e1586235767"));
+        this.getLogger().info(TextFormat.colorize('&',"&cThis plug-in is an original plug-in, and the source of some source codes has been marked with the original author"));
+        this.getLogger().info(TextFormat.colorize('&',"&cTranslated by "));
+        sendMessageToConsole("&aChecking for corresponding dependencies");
         for(String s : this.getDescription().getSoftDepend()){
             Plugin plugin = getServer().getPluginManager().getPlugin(s);
             if(plugin == null){
-                sendMessageToConsole("&c"+s+" 插件未加载，部分功能可能无法实现");
+                sendMessageToConsole("&c"+s+"The plugin is not loaded, some functions may not be available");
                 continue;
             }
             try{
@@ -112,17 +113,17 @@ public class BedWarMain extends PluginBase {
         RoomEventManager.register("light",LightEvent.class);
         RoomEventManager.register("die", DiwBowEvent.class);
 
-        sendMessageToConsole("&e当前内置 &a"+RoomEventManager.EVENT.size()+" &e个事件");
+        sendMessageToConsole("&Currently built-in &a"+RoomEventManager.EVENT.size()+" &eevents");
 
 
 
         ThreadManager.init();
-        this.getLogger().info(TextFormat.colorize('&',"&a起床战争插件加载完成，祝您使用愉快"));
+        this.getLogger().info(TextFormat.colorize('&',"&aThe Bed Wars plug-in is successfully loaded, Enjoy!"));
 
     }
 
     /**
-     * 加载配置文件
+     * load configuration file
     */
     public void loadBedWarConfig(){
         saveDefaultConfig();
@@ -134,12 +135,12 @@ public class BedWarMain extends PluginBase {
         File mainFileDir = new File(this.getDataFolder()+File.separator+"rooms");
         if(!mainFileDir.exists()){
             if(!mainFileDir.mkdirs()){
-                sendMessageToConsole("&c创建文件夹 rooms失败");
+                sendMessageToConsole("&cFailed to create folder rooms");
             }
         }
 
         roomManager = RoomManager.initGameRoomConfig(mainFileDir);
-        sendMessageToConsole("&a房间数据全部加载完成");
+        sendMessageToConsole("&aAll room data is loaded");
         this.getServer().getPluginManager().registerEvents(roomManager,this);
         if(getConfig().getAll().size() == 0) {
             this.saveResource("config.yml", true);
@@ -149,7 +150,7 @@ public class BedWarMain extends PluginBase {
 
 
 
-        //初始化排行榜
+        //Initialize leaderboard
         topManager = PlayerTopManager.asFile(new File(this.getDataFolder()+File.separator+"top.json"));
         if(topManager != null){
             topManager.init();
@@ -187,7 +188,7 @@ public class BedWarMain extends PluginBase {
     }
 
     public static String getScoreBoardTitle(){
-        return TextFormat.colorize('&',bedWarMain.getConfig().getString("scoreboard-title","&f[&a起床战争&f]"));
+        return TextFormat.colorize('&',bedWarMain.getConfig().getString("scoreboard-title","&f[&aBed Wars&f]"));
     }
 
     public static void sendTipMessageToObject(String msg,Object o){
@@ -268,7 +269,7 @@ public class BedWarMain extends PluginBase {
 
     private void checkServer(){
         boolean ver = false;
-        //双核心兼容
+        //Dual core compatible
         try {
             Class<?> c = Class.forName("cn.nukkit.Nukkit");
             c.getField("NUKKIT_PM1E");
@@ -284,19 +285,19 @@ public class BedWarMain extends PluginBase {
 
         AbstractFakeInventory.IS_PM1E = ver;
         if(ver){
-            sendMessageToConsole("&e当前核心为 Nukkit PM1E");
+            sendMessageToConsole("&eRunning on Nukkit PM1E");
         }else{
-            sendMessageToConsole("&e当前核心为 Nukkit");
+            sendMessageToConsole("&eRunning on Nukkit");
         }
     }
 
     public enum UiType{
         /**
-         * auto: 自动
+         * auto: automatic
          *
-         * packet: GUI界面
+         * packet: Graphical User Interface (GUI)
          *
-         * ui: 箱子界面
+         * ui: chest interface
          * */
         AUTO,PACKET,UI
     }
