@@ -219,7 +219,7 @@ public void onCreatePreset(String value){
      * */
     private void createShop2Pos(){
         teamShop2.put(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamShop2.size()),WorldInfoConfig.locationToString(creater.getLocation()));
-        creater.sendForceMessage("&2"+ messages.getString("setUp") +"+(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamShop2.size() - 1))+ messages.getString("teamShop") +" &r[&2"+teamShop2.size()+" &b/&d "+roomConfig.getTeamCfg().size()+"&r]");
+        creater.sendForceMessage("&2"+ messages.getString("setUp") +(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamShop2.size() - 1))+ messages.getString("teamShop") +" &r[&2"+teamShop2.size()+" &b/&d "+roomConfig.getTeamCfg().size()+"&r]");
         if(teamShop2.size() == roomConfig.getTeamCfg().size()){
             creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b" +messages.getString("setUp")+" " +(new ArrayList<>(roomConfig.teamCfg.keySet()).get(0))+ messages.getString("spawnPoint") +" &r[&2"+(team.size() + 1)+" &b/&d "+roomConfig.getTeamCfg().size()+"&r]");
             flag++;
