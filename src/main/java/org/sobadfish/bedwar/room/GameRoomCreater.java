@@ -161,7 +161,7 @@ public void onCreatePreset(String value){
             case 3:
                 worldInfoConfig.setWaitPosition(creater.getPosition());
                 creater.sendForceMessage("&2"+ messages.getString("cmpletedWaitingHall"));
-                creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b"+messages.getString("setUp")+ +(new ArrayList<>(roomConfig.teamCfg.keySet()).get(team.size()))+ messages.getString("shop") +" &21&b /&d "+roomConfig.teamCfg.size()+"&r]");
+                creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b"+messages.getString("setUp") +(new ArrayList<>(roomConfig.teamCfg.keySet()).get(team.size()))+ messages.getString("shop") +" &21&b /&d "+roomConfig.teamCfg.size()+"&r]");
                 flag++;
                 break;
             case 4:
