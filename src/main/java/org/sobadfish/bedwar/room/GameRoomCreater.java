@@ -153,7 +153,7 @@ public void onCreatePreset(String value){
                 break;
             case 2:
                 worldInfoConfig = WorldInfoConfig.createWorldConfig(creater.getLevel().getFolderName());
-                creater.sendForceMessage("&2" messages.getString("gameMapSet"));
+                creater.sendForceMessage("&2" + messages.getString("gameMapSet"));
                 creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &b["+messages.getString("setupWaitingHall")  +"]");
                 flag++;
                 break;
