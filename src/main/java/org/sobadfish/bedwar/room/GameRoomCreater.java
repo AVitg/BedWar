@@ -226,7 +226,7 @@ public void onCreatePreset(String value){
             return;
 
         }
-        creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b设置"+(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamShop2.size() ))+ messages.getString("teamShop")+ " &r[&2"+(teamShop2.size() + 1)+" &b/&d "+roomConfig.getTeamCfg().size()+"&r]");
+        creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b"+messages.getString("setUp") +(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamShop2.size() ))+ messages.getString("teamShop")+ " &r[&2"+(teamShop2.size() + 1)+" &b/&d "+roomConfig.getTeamCfg().size()+"&r]");
 
     }
 
@@ -236,11 +236,11 @@ public void onCreatePreset(String value){
     private void createBedPos(){
         teamBed.put(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamBed.size()),WorldInfoConfig.positionToString(creater.getPosition()));
         teamBedFace.put(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamBedFace.size()),creater.getHorizontalFacing());
-        creater.sendForceMessage("&2" + messages.getString("setUp")  +(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamBed.size() - 1))+"床坐标 &r[&2"+teamBed.size()+" &b/&d "+roomConfig.getTeamCfg().size()+"&r]");
+        creater.sendForceMessage("&2" + messages.getString("setUp")  +(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamBed.size() - 1))+messages.getString("bedCoordinates") +" &r[&2"+teamBed.size()+" &b/&d "+roomConfig.getTeamCfg().size()+"&r]");
         if(teamBed.size() == roomConfig.getTeamCfg().size()){
 
-            creater.sendForceMessage("&2队伍床设置完成");
-            creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b设置 &r"+roomConfig.moneyItem.getNames().get(0)+" &2刷新点 &r"+" [&21 &b/&d "+moneyItemSize.getOrDefault(roomConfig.moneyItem.getNames().get(0),4)+"&r]");
+            creater.sendForceMessage("&2" +messages.getString("setupBedComplete"));
+            creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b"+ messages.getString("setUp")+ " &r"+roomConfig.moneyItem.getNames().get(0)+" &2"+messages.getString("refreshPoint")+" &r"+" [&21 &b/&d "+moneyItemSize.getOrDefault(roomConfig.moneyItem.getNames().get(0),4)+"&r]");
             ArrayList<TeamInfoConfig> teamInfoConfigs = new ArrayList<>();
             for(String teamName : team.keySet()){
                 TeamInfoConfig teamInfoConfig = new TeamInfoConfig(roomConfig.teamCfg.get(teamName),teamBed.get(teamName),teamBedFace.get(teamName),team.get(teamName));
@@ -257,7 +257,7 @@ public void onCreatePreset(String value){
             return;
 
         }
-        creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b设置"+(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamBed.size()))+"床&r [&2"+(teamBed.size() + 1)+" &b/&d "+roomConfig.getTeamCfg().size()+"&r]");
+        creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b"+ messages.getString("setUp") +(new ArrayList<>(roomConfig.teamCfg.keySet()).get(teamBed.size()))+ messages.getString("bed")+" &r [&2"+(teamBed.size() + 1)+" &b/&d "+roomConfig.getTeamCfg().size()+"&r]");
     }
     /**
      * 创建生成点坐标
@@ -272,9 +272,10 @@ public void onCreatePreset(String value){
         ArrayList<String> positions = itemPosition.get(name);
         if(positions.size() < moneyItemSize.getOrDefault(name,4)){
             positions.add(WorldInfoConfig.positionToString(creater.getPosition()));
-            creater.sendForceMessage("&2"+messages.getString("setUp") + "&r "+name+" &2生成点坐标&r [&2"+positions.size()+" &b/&d "+moneyItemSize.getOrDefault(name,4)+"&r]");
+            creater.sendForceMessage("&2"+messages.getString("setUp") + "&r "+name+" &2"+messages.getString("itemPosition") +"&r [&2"+positions.size()+" &b/&d "+moneyItemSize.getOrDefault(name,4)+"&r]");
             if(positions.size() != moneyItemSize.getOrDefault(name,4)) {
-                creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b设置物品刷新点&r " + name + " [&2" + (positions.size() + 1) + " &b/&d "+moneyItemSize.getOrDefault(name,4)+"&r]");
+                creater.sendForceMessage("&e" + messages.getString("continueExecute") +" &r/bd &e " + messages.getString("proceed") + " &r[&b"+messages.getString("setupItemRefreshPoint")+"&r " + name + " [&2" + (positions.size() + 1) + " &b/&d "+moneyItemSize.getOrDefault(name,4)+"&r]");
+				//keggTODO
             }else{
 
                 if(itemName.size() > itemFlag+1){
