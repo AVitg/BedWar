@@ -16,3 +16,8 @@ softdepend:
 
 loadbefore:
   - ScoreboardPlugin
+
+commands:
+  bd:
+  bw:
+  bws:
