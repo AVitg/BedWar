@@ -74,11 +74,11 @@ public class BedWarAdminCommand extends Command {
         }
         if (strings.length > 0 && "help".equalsIgnoreCase(strings[0])) {
             commandSender.sendMessage(messages.getString("justType") +" /bd " +messages.getString("thatsIt"));
-            commandSender.sendMessage("其他指令介绍:");
-            commandSender.sendMessage("/bd reload 重新载入配置");
-            commandSender.sendMessage("/bd set [" + messages.getString("name") + "] 创建一个自定义房间模板");
-            commandSender.sendMessage("/bd tsl 读取模板的队伍数据与商店物品数据");
-            commandSender.sendMessage("/bd see 查看所有加载的房间");
+            commandSender.sendMessage(messages.getString("helpOtherCommands") + ":");
+            commandSender.sendMessage("/bd reload " + messages.getString("reloadConfig"));
+            commandSender.sendMessage("/bd set [" + messages.getString("name") + "] " + messages.getString("createCustomRoomTemplate"));
+            commandSender.sendMessage("/bd tsl "+ messages.getString("getSetTSL"));
+            commandSender.sendMessage("/bd see" +messages.getString("listAllLoadedRooms"));
             commandSender.sendMessage("/bd close ["+ messages.getString("name") + " ] 关闭房间");
             commandSender.sendMessage("/bd exp [玩家] [数量] <由来> 增加玩家经验");
             commandSender.sendMessage("/bd status 查看线程状态");
