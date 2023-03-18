@@ -106,8 +106,8 @@ public class BedWarMain extends PluginBase {
         //TODO 注册指令
         this.getServer().getCommandMap().register("bedwar",new BedWarAdminCommand("bd"));
         this.getServer().getCommandMap().register("bedwar",new BedWarCommand("bw"));
-        this.getServer().getCommandMap().register("bedwar",new KeggCommand("bk"));
         this.getServer().getCommandMap().register("bedwar",new BedWarSpeakCommand("bws"));
+        this.getServer().getCommandMap().register("bedwar", new KeggCommand("kegg"));
 
 
 
