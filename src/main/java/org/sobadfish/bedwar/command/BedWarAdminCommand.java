@@ -79,14 +79,14 @@ public class BedWarAdminCommand extends Command {
             commandSender.sendMessage("/bd set [" + messages.getString("name") + "] " + messages.getString("createCustomRoomTemplate"));
             commandSender.sendMessage("/bd tsl "+ messages.getString("getSetTSL"));
             commandSender.sendMessage("/bd see" +messages.getString("listAllLoadedRooms"));
-            commandSender.sendMessage("/bd close ["+ messages.getString("name") + " ]"+ messages.getString("closeTheRoom") 关闭房间");
-            commandSender.sendMessage("/bd exp [玩家] [数量] <由来> 增加玩家经验");
-            commandSender.sendMessage("/bd status 查看线程状态");
-            commandSender.sendMessage("/bd end 停止模板预设");
-            commandSender.sendMessage("/bd float add/remove [房间"+ messages.getString("name") + "] ["+ messages.getString("name") +" ] [文本] 在脚下设置浮空字/删除浮空字");
-            commandSender.sendMessage("/bd cancel 终止房间创建");
-            commandSender.sendMessage("/bd top add/remove ["+ messages.getString("name") +" ] [类型] [房间(可不填)] 创建/删除排行榜");
-            StringBuilder v = new StringBuilder("类型: ");
+            commandSender.sendMessage("/bd close ["+ messages.getString("name") + " ]"+ messages.getString("closeTheRoom"));
+            commandSender.sendMessage("/bd exp ["+ messages.getString("player")+"] [" + messages.getString("amount") +"] <" + messages.getString("source")+ ">"+ messages.getString("EXP"));
+            commandSender.sendMessage("/bd status" + messages.getString("viewStatus"));
+            commandSender.sendMessage("/bd end" + messages.getString("endCustomeRoomCreation"));
+            commandSender.sendMessage("/bd float add/remove ["+ messages.getString("room")+ messages.getString("name") + "] ["+ messages.getString("name") +" ] ["+ messages.getString("text") + "] "+ messages.getString("setFloatingWordsUnderTheFeet ") +"/"+ messages.getString("deleteFloatingWords"));
+            commandSender.sendMessage("/bd cancel "+ messages.getString("cancelCustomRoomCreation"));
+            commandSender.sendMessage("/bd top add/remove ["+ messages.getString("name") +" ] ["+messages.getString("type")+ "] [(" + messages.getString("optional") + ")] " + messages.getString("createDeleteLeaderboard"));
+            StringBuilder v = new StringBuilder(messages.getString("type")+": ");
             for(PlayerData.DataType type: PlayerData.DataType.values()){
                 v.append(type.getName()).append(" , ");
             }
