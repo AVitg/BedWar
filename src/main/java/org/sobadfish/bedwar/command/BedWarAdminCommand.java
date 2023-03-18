@@ -79,7 +79,7 @@ public class BedWarAdminCommand extends Command {
             commandSender.sendMessage("/bd set [" + messages.getString("name") + "] " + messages.getString("createCustomRoomTemplate"));
             commandSender.sendMessage("/bd tsl "+ messages.getString("getSetTSL"));
             commandSender.sendMessage("/bd see" +messages.getString("listAllLoadedRooms"));
-            commandSender.sendMessage("/bd close ["+ messages.getString("name") + " ] 关闭房间");
+            commandSender.sendMessage("/bd close ["+ messages.getString("name") + " ]"+ messages.getString("closeTheRoom") 关闭房间");
             commandSender.sendMessage("/bd exp [玩家] [数量] <由来> 增加玩家经验");
             commandSender.sendMessage("/bd status 查看线程状态");
             commandSender.sendMessage("/bd end 停止模板预设");
