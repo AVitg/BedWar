@@ -83,7 +83,7 @@ public class BedWarAdminCommand extends Command {
             commandSender.sendMessage("/bd exp ["+ messages.getString("player")+"] [" + messages.getString("amount") +"] <" + messages.getString("source")+ ">"+ messages.getString("EXP"));
             commandSender.sendMessage("/bd status" + messages.getString("viewStatus"));
             commandSender.sendMessage("/bd end" + messages.getString("endCustomeRoomCreation"));
-            commandSender.sendMessage("/bd float add/remove ["+ messages.getString("room")+ messages.getString("name") + "] ["+ messages.getString("name") +" ] ["+ messages.getString("text") + "] "+ messages.getString("setFloatingWordsUnderTheFeet ") +"/"+ messages.getString("deleteFloatingWords"));
+            commandSender.sendMessage("/bd float add/remove ["+ messages.getString("room")+ messages.getString("name") + "] ["+ messages.getString("name") +" ] ["+ messages.getString("text") + "] "+ messages.getString("putFloatingWordsUnderTheFeet") +"/"+ messages.getString("deleteFloatingWords"));
             commandSender.sendMessage("/bd cancel "+ messages.getString("cancelCustomRoomCreation"));
             commandSender.sendMessage("/bd top add/remove ["+ messages.getString("name") +" ] ["+messages.getString("type")+ "] [(" + messages.getString("optional") + ")] " + messages.getString("createDeleteLeaderboard"));
             StringBuilder v = new StringBuilder(messages.getString("type")+": ");
